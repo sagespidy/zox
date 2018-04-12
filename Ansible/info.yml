@@ -1,0 +1,13 @@
+---
+- hosts: all # Define which group to Operate on
+  remote_user: ubuntu #  Define the SSH user name
+  gather_facts: True  #
+  tasks:  # Define task for host group all
+
+     - name: System info  # Just the name of task
+       debug:  #
+         msg: "Processor = {{ ansible_processor }} ,
+              CPU Cores = {{ ansible_processor_cores }},
+              RAM = {{ ansible_memtotal_mb }} MB,
+              Distrubtion Details = {{ ansible_distribution }} {{ansible_distribution_version}} {{ansible_distribution_release}},
+              Kernel = {{ansible_kernel}} with architecture {{ansible_architecture}} "
