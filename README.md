@@ -71,5 +71,4 @@ How will you help Zox do following programmatically:
   ansible-playbook info.yml -i inventory --private-key ~/Documents/zox
   ```
 
-  ​
-
+  [![asciicast](https://asciinema.org/a/JdVxkhcitfBHzE91FdwhRldkX.png)](https://asciinema.org/a/JdVxkhcitfBHzE91FdwhRldkX)
