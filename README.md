@@ -24,7 +24,7 @@ How will you help Zox do following programmatically:
 
 > 1. **Get information of machine specs - CPU, RAM configured, Linux  kernel and distribution.**
 
-<script src="https://asciinema.org/a/JdVxkhcitfBHzE91FdwhRldkX.js" id="asciicast-JdVxkhcitfBHzE91FdwhRldkX" async></script>
+[![asciicast](https://asciinema.org/a/JdVxkhcitfBHzE91FdwhRldkX.png)](https://asciinema.org/a/JdVxkhcitfBHzE91FdwhRldkX)
 
 ## Prerequisite
 
