@@ -24,9 +24,13 @@ How will you help Zox do following programmatically:
 
 > 1. **Get information of machine specs - CPU, RAM configured, Linux  kernel and distribution.**
 
+<script src="https://asciinema.org/a/JdVxkhcitfBHzE91FdwhRldkX.js" id="asciicast-JdVxkhcitfBHzE91FdwhRldkX" async></script>
+
 ## Prerequisite
 
 - IP address  of all the servers
+
+
 - SSH key with access to servers
 - Ansible installed your Machine
 
@@ -71,4 +75,4 @@ How will you help Zox do following programmatically:
   ansible-playbook info.yml -i inventory --private-key ~/Documents/zox
   ```
 
-  [![asciicast](https://asciinema.org/a/JdVxkhcitfBHzE91FdwhRldkX.png)](https://asciinema.org/a/JdVxkhcitfBHzE91FdwhRldkX)
+  ​
