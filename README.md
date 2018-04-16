@@ -75,4 +75,78 @@ How will you help Zox do following programmatically:
   ansible-playbook info.yml -i inventory --private-key ~/Documents/zox
   ```
 
-  ​
+
+
+> 2.**Spawn specific instance in any of the cloud environment and terminate that instance when needed.**
+
+[![asciicast](https://asciinema.org/a/LFSQpy6eFiRylgTdZQFrC3wuM.png)](https://asciinema.org/a/LFSQpy6eFiRylgTdZQFrC3wuM)
+
+## Prerequisite
+
+- Terraform installed in local Machine
+- **AWS Env**    ==>   Access Key & Secret Access Key for  
+- **GCP Env**    ==> Json file with credentials 
+- **Azure Env**        ==>  Azure cli 2.0 installed on local machine.
+
+We can Terraform  modules to do so. 
+
+ -  clone the repo of required env.
+
+ -  Provide the required values of variable in `terraform.tfvars` file
+
+ -  To check the vailidity of plan
+
+    ```
+    terrform plan
+    ```
+
+- To create the instances
+
+  ```
+  terraform apply
+  ```
+
+- To destory the environment
+
+  ```
+  terraform destroy
+  ```
+
+
+
+
+> 3. **Setup monitoring of these servers. Zox needs a dashboard where it can monitor CPU usage, RAM usage.**
+
+We have multiple options here. We can use inbuilt  cloud services like Cloudwatch, stack driver, Azure Monitor and have them send data to a centralized Grafana 
+
+ For demo purpose,  i have setup zabbix server here : [Zabbix](http://zabbix.sagespidy.com/zabbix)
+
+The server is setup for auto-discovery. If there is a agent running  on a server and have the IP of Zabbix server configured, it will be automatically registered.
+
+
+
+This is a startup script that can be run when a server is provisioned or on a running host.
+
+```
+#! /bin/bash
+apt update
+apt install zabbix-agent -y
+cd /opt/
+wget https://raw.githubusercontent.com/sagespidy/zox/master/zabbix/zabbix_agentd.conf
+cp  zabbix_agentd.conf /etc/zabbix/
+service zabbix_agent stop
+service zabbix_agent start
+```
+
+
+
+For Dashboard, we can use grafana. For demo purpose,  i have setup Grafana server here : [Grafana](http://zabbix.sagespidy.com:3000)
+
+
+
+> 4. **DevOps team needs to be alerted if for any of the server, % RAM usage is more than 80% for more than 5 minutes.**
+
+
+
+Zabbix has inbuilt triggers for RAM usage. It will send alerts via configured media types
+

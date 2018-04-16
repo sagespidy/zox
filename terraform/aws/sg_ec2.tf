@@ -29,10 +29,10 @@ resource "aws_security_group" "dev"
 
   }
  ingress{
-    from_port = 9100
-    to_port = 9100
+    from_port = 10050
+    to_port = 10050
     protocol = "tcp"
-    cidr_blocks = ["54.153.41.181/32"]
+    cidr_blocks = ["0.0.0.0/0"]
 
   }
   egress{
